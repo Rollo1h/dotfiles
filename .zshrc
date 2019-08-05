@@ -24,6 +24,9 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme
 zplug load
 setopt nonomatch
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 # }}}
 
 
@@ -99,5 +102,3 @@ if [ -e ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 # }}}
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

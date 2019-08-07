@@ -95,6 +95,20 @@ alias dc='docker-compose'
 alias kc='kubectl'
 # }}}
 
+# Python {{{
+# pyenv
+iexport PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# pipenv
+eval "$(pipenv --completion)"
+}}}
+
+# Directory {{{
+# direnv
+eval "$(direnv hook bash)"
+}}}
 
 # LOCAL {{{
 # Load local setting

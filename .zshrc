@@ -103,12 +103,12 @@ eval "$(pyenv init -)"
 
 # pipenv
 eval "$(pipenv --completion)"
-}}}
+# }}}
 
 # Directory {{{
 # direnv
 eval "$(direnv hook bash)"
-}}}
+# }}}
 
 # LOCAL {{{
 # Load local setting

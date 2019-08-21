@@ -52,13 +52,49 @@ fi
 # }}}
 
 
+# COLOR {{{
+# ls_colors
+if [[ -z "$SHELL" ]]; then
+    export SHELL="$(which zsh)"
+fi
+eval `gdircolors -b`
+eval `gdircolors ${HOME}/.dircolors-monokai`
+
+# remove file mark
+unsetopt list_types
+
+# color at completion
+autoload -Uz colors
+colors
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# less
+export LESS='-R'
+
+# man
+export MANPAGER='less -R'
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;33m") \
+        LESS_TERMCAP_md=$(printf "\e[1;36m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+# }}}
+
 # ALIAS {{{
 # general
 alias h='tldr'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -l'
-alias lla='ls -la'
+alias l='gls -CF --color=auto'
+alias ls='gls -CF --color=auto'
+alias la='gls -A --color=auto'
+alias ll='gls -l --color=auto'
+alias lla='gls -la --color=auto'
 alias m='mkdir'
 alias reload='source ~/.zshrc'
 alias ssh='TERM=xterm ssh'

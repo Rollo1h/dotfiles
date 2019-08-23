@@ -130,6 +130,9 @@ alias d='docker'
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
 alias dc='docker-compose'
 alias kc='kubectl'
+
+# brew
+alias brew="env PATH=${PATH/\/Users\/rollo\/\.pyenv\/shims:/} brew"
 # }}}
 
 # Python {{{

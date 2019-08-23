@@ -9,6 +9,7 @@
 # source ~/.bashrc
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
+export PATH="/usr/local/sbin:$PATH"
 # }}}
 
 
